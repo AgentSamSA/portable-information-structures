@@ -1,5 +1,5 @@
 from flask import Flask, jsonify
-from indexer import build_index
+from I7.server.indexer import build_index
 
 app = Flask(__name__)
 

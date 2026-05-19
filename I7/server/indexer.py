@@ -1,5 +1,5 @@
-from loader import stream_cards
-from transform import transform_card
+from I7.server.loader import stream_cards
+from I7.server.transform import transform_card
 
 # Build index of cards for faster lookup
 def build_index():
