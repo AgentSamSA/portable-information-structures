@@ -45,7 +45,7 @@ def search_cards():
         or q in (card['cardInfo']['oracleText'] or '').lower()
     ]
 
-    return jsonify(results[:50])
+    return jsonify(results[:30])
 
 
 # Filter cards by color (?color={color})
@@ -58,7 +58,7 @@ def filter_cards():
         if color in card['gameplayInfo']['colors']
     ]
 
-    return jsonify(results)
+    return jsonify(results[:30])
 
 # Recommend cards based on color and max mana value (?color={color}&max_cmc={cmc})
 @app.route('/cards/recommend')
