@@ -18,15 +18,3 @@ Returns a json object for a *Magic: The Gathering* card with the specified name 
 
 `/cards`  
 Returns a list of json objects for every *Magic: The Gathering* card. WARNING: maybe be slow due to the size of the dataset (>500MB).
-
-`/cards/random`
-Returns a random card.
-
-`/cards/search`
-Returns cards based on if the search term is in the name or in the card's oracle text.
-
-`/cards/filter`
-Filters cards by their color.
-
-`/cards/recommend`
-Recommends a card for you based on the color and max mana value.
