@@ -11,7 +11,7 @@ def ensure_dataset():
         print('[loader] Dataset not found. Downloading...')
 
         try:
-            from server.download import download_data
+            from I7.server.download import download_data
 
             download_data()
         except Exception as e:
