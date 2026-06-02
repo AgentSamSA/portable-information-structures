@@ -3,8 +3,8 @@ A small API that returns Magic: The Gathering card information from Scryfall, bu
 
 ## Setup
 ```
-git clone https://github.com/AgentSamSA/mtg-cards-flask-server.git
-cd your-repo
+git clone https://github.com/AgentSamSA/portable-information-structures.git
+cd portable-information-structures/I8
 pip install -r requirements.txt
 ```
 You may choose to run this project in a virtual environment so that you can install the requirements only for this project.
