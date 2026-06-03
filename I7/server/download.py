@@ -5,8 +5,11 @@ BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / 'data'
 DATA_PATH = DATA_DIR / 'default-cards.json'
 
-def download_data():
-    DATA_DIR.mkdir(parents=True, exist_ok=True)
+def download_data(target_dir=None):
+    target_dir = Path(target_dir) if target_dir else Path(__file__).resolve().parent / "data"
+    target_dir.mkdir(parents=True, exist_ok=True)
+
+    target_file = target_dir / "default-cards.json"
 
     print('[download] Fetching Scryfall bulk data metadata...')
     res = requests.get('https://api.scryfall.com/bulk-data', timeout=30)
@@ -29,7 +32,7 @@ def download_data():
     r = requests.get(download_url, stream=True, timeout=120)
     r.raise_for_status()
 
-    with open(DATA_PATH, 'wb') as f:
+    with open(target_file, 'wb') as f:
         for chunk in r.iter_content(1024 * 1024):
             if chunk:
                 f.write(chunk)

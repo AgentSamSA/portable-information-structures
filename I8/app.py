@@ -1,6 +1,6 @@
 import random
 from flask import Flask, jsonify, request
-from server.indexer import build_index
+from .server.indexer import build_index
 
 app = Flask(__name__)
 

@@ -1,5 +1,6 @@
 from pathlib import Path
 import ijson
+from I7.server.download import download_data
 
 BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / 'data'
@@ -11,9 +12,7 @@ def ensure_dataset():
         print('[loader] Dataset not found. Downloading...')
 
         try:
-            from I7.server.download import download_data
-
-            download_data()
+            download_data(DATA_DIR)
         except Exception as e:
             print('[loader] Download failed:', e)
             return
